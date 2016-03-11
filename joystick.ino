@@ -22,7 +22,7 @@ void updateJoystickInformation()
   int horizontal = analogRead(A1);
   if (vertical > topLimit)
   {
-    verticalPosition = TOP;  
+    verticalPosition = TOP; 
   }  
   else if (vertical < bottomLimit)
   {
@@ -45,5 +45,17 @@ void updateJoystickInformation()
   {
     horizontalPosition = CENTER_H;
   }
+}
+
+void change_menu(){
+  /*
+  updateJoystickInformation();
+  if (verticalPosition == TOP){
+        (int)product--;
+  }
+  else if (verticalPosition == BOTTOM){
+        (int)product++;
+  }
+  */
 }
 

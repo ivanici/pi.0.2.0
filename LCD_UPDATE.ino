@@ -1,9 +1,13 @@
 #include <LiquidCrystal.h>
+#include "defs.h"
 
 LiquidCrystal lcd (RS, EN, D7, D6, D5, D4);
 
-lcd.begin (16, 4);
-lcd.clear();
+void LCD_inti()
+{
+  lcd.begin (16, 4);
+  lcd.clear();
+}
 
 void LCD_main() //menu principale, du choix des solution
 {
@@ -27,6 +31,13 @@ void LCD_fill() //message pendant le rechargement
 
 void LCD_empty() // message pendant la distribution de la solution.
 {
-  
+  lcd.setCursor(0, 0);
+  lcd.print("  please wait.  ");
+  lcd.setCursor(0, 1);
+  lcd.print("distrib progress");
+  lcd.setCursor(0, 1);
+  lcd.print("  SVP attendez  ");
+  lcd.setCursor(0, 1);
+  lcd.print("  distribution  ");
 }
 
