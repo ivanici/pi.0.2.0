@@ -22,7 +22,7 @@ void updateJoystickInformation()
   int horizontal = analogRead(A1);
   if (vertical > topLimit)
   {
-    verticalPosition = TOP; 
+    verticalPosition = TOP;  
   }  
   else if (vertical < bottomLimit)
   {
@@ -48,14 +48,80 @@ void updateJoystickInformation()
 }
 
 void change_menu(){
-  /*
   updateJoystickInformation();
   if (verticalPosition == TOP){
-        (int)product--;
+        if (product == solution_1){
+          product = (END - 1);
+        }
+        else{
+          product--;
+        }
   }
   else if (verticalPosition == BOTTOM){
-        (int)product++;
+        if (product == (END - 1)){
+          product = (BEGIN + 1);
+        }
+        else{
+          product++;
+        }
   }
-  */
 }
 
+void incrementVolumValue(){
+updateJoystickInformation();
+switch(product){
+    case solution_1:
+      if ((horizontalPosition == RIGHT) && (volum_1 > 0)){
+       volum_1 = volum_1 - 0.2; 
+       delay(100);
+      }
+      else if (horizontalPosition == LEFT){
+       volum_1 = volum_1 + 0.2;
+       delay(100);
+      }
+    break;
+    case solution_2:
+      if (horizontalPosition == RIGHT  && (volum_2 > 0)){
+        volum_2 = volum_2 - 0.25;
+        delay(100);
+      }
+      else if (horizontalPosition == LEFT){
+        volum_2 = volum_2 + 0.25;
+        delay(100);
+      }
+    break;
+    
+    case solution_3:
+      if (horizontalPosition == RIGHT  && (volum_3 > 0)){
+       volum_3 = volum_3 - 0.25;
+       delay(100);
+      }
+      else if (horizontalPosition == LEFT){
+       volum_3 = volum_3 + 0.25;
+       delay(100);
+      }
+    break;
+    
+    case solution_4:
+      if (horizontalPosition == RIGHT && (volum_4 > 0)){
+       volum_4 = volum_4 - 0.25;
+       delay(100);
+      }
+      else if (horizontalPosition == LEFT){
+       volum_4 = volum_4 + 0.25;
+       delay(100);
+      }
+    break;
+    
+    case solution_5:
+      if (horizontalPosition == RIGHT && (volum_5 > 0)){
+       volum_5 = volum_5 - 0.25;
+       delay(100);
+      }
+      else if (horizontalPosition == LEFT){
+       volum_5 = volum_5 + 0.25;
+       delay(100);
+      }
+    break;
+  }
+}
